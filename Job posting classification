@@ -120,10 +120,10 @@ def classify_new_jobs(new_jobs_df, vectorizer, kmeans):
 def alert_users(jobs_df, preferred_clusters):
     matched_jobs = jobs_df[jobs_df['Cluster'].isin(preferred_clusters)]
     if not matched_jobs.empty:
-        print("\n📢 New jobs matching user interests:")
+        print("\n New jobs matching user interests:")
         print(matched_jobs[['Title', 'Company', 'Skills', 'Cluster']])
     else:
-        print("\n❌ No new jobs found for the user's interests.")
+        print("\n No new jobs found for the user's interests.")
 
 # Scrape fresh jobs
 new_jobs_df = scrape_karkidi_jobs(keyword="data science", pages=1)
